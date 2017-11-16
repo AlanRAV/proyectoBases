@@ -11,4 +11,3 @@ public class appid {
 	       this.juegos = juegos;
 	    }
 }
-

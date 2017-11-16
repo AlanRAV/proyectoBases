@@ -10,28 +10,35 @@ import java.util.Map;
 import java.util.Set;
 
 public class juego {
-	int appid;
-    String name;
-    String developer;
-    String publisher;
-    int score_rank;
-    int owners;
-    int owners_variance;
-    int players_forever;
-    int players_forever_variance;
-    int players_2weeks;
-    int players_2weeks_variance;
-    int average_forever;
-    int average_2weeks;
-    int median_forever;
-    int median_2weeks;
-    int ccu;
-    int price;
-    
-    Map<String,String> tags;
+	private int appid;
+	private String name;
+	private String developer;
+	private String publisher;
+	private int score_rank;
+	private int owners;
+	private int owners_variance;
+	private int players_forever;
+	private int players_forever_variance;
+	private  int players_2weeks;
+	private int players_2weeks_variance;
+	private int average_forever;
+	private int average_2weeks;
+	private int median_forever;
+	private int median_2weeks;
+	private int ccu;
+	private int price; 
+        private int playtime_forever;
+	private Map<String,String> tags;
 	public Map<String,String> getTags(){
 	       return tags;
 	    }
+	float pageRank=0;
+	public void setpageRank(float rank){
+		this.pageRank = rank;
+	}
+	public float getpageRank(){
+		return this.pageRank;
+	}
 	    public void setTags (Map<String,String> tags){
 	       this.tags = tags;
 	    }
@@ -160,9 +167,16 @@ public class juego {
     public void setPrice (int price){
        this.price = price;
     }
+    
+    public int getPlaytimeForever(){
+       return playtime_forever;
+    }
+    public void setPlaytimeForever (int playtime_forever){
+       this.playtime_forever = playtime_forever;
+    }
 
 	public String toString() {
-        return name + " - " + developer + " - " +price;
+        return name + " - " + developer + " - " +appid;
     }
 	/*
 	public tags getTags(){
