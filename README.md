@@ -48,4 +48,4 @@ Firebase Client
  To execute the project just import the project to your favorite IDE, make sure you have all the dependencies, run using the "lector" class as main, and click the button to have your recommendations 
 ***************************************
 Customization
-The project right now gives recommendation according to a given, game from the top 100 games owned, you could choos a different game with its appid provided by Steam
+The project right now gives recommendation according to a given game from the top 100 games owned, you could choose a different game with its appid provided by Steam by changing the variable "juego" in NewJFrame class.
