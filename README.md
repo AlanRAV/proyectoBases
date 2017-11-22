@@ -48,4 +48,6 @@ Firebase Client
  To execute the project just import the project to your favorite IDE, make sure you have all the dependencies, run using the "lector" class as main, and click the button to have your recommendations 
 ***************************************
 Customization
-The project right now gives recommendation according to a given game from the top 100 games owned, you could choose a different game with its appid provided by Steam by changing the variable "juego" in NewJFrame class.
+The project right now gives recommendation according to a given, game from the top 100 games owned, you could choos a different game with its appid provided by Steam
+if you want a recoomendation of some game you must change the variable "juego" in the NewJFrame class, make sure that the id of the game is on the database. you can check the ids in this page: http://steamspy.com/api.php?request=top100forever
+remember that the projec works with our database, if you want to use your own you will have to change all the firebase references in the code.
