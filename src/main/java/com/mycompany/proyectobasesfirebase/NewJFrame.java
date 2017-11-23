@@ -41,7 +41,7 @@ public class NewJFrame extends javax.swing.JFrame {
     String [] arrayIds = new String [n];
     private static Object[] ids;
     Query queryRef ;
-    
+    String recomendados = "";
     String juego="221380";
     Firebase myFirebaseRef = new Firebase("https://proyectobases-56c48.firebaseio.com/"); //<---- How to find this
     
@@ -61,7 +61,7 @@ public class NewJFrame extends javax.swing.JFrame {
         this.setLayout(null);                                   // no usamos ningun layout, solo asi podremos dar posiciones a los componentes
         this.setResizable(true);                               // hacemos que la ventana no sea redimiensionable
         this.setDefaultCloseOperation(NewJFrame.EXIT_ON_CLOSE);         
-        System.out.println("Trolo"); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("IDS 5 juegos mas jugados"); //To change body of generated methods, choose Tools | Templates.
            
 
           
@@ -181,8 +181,12 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jTextArea1.setBackground(new java.awt.Color(0, 0, 0));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monotype Corsiva", 1, 18)); // NOI18N
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
         jTextArea1.setRows(5);
+        jTextArea1.setText("");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,6 +215,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Firebase delFirebaseRef = myFirebaseRef;
+        
 
       
 
@@ -253,7 +258,8 @@ public class NewJFrame extends javax.swing.JFrame {
                           sorterLong sorLong=new sorterLong();
 		        arregloTiempo=sorLong.sort(arregloTiempo);
                         for (int l =1; l<=5; l++){
-                        System.out.println(arregloTiempo[l][0] + "PUTAAAAAAAAAAAAAAAAAa");
+                        System.out.println(arregloTiempo[l][0] + "");
+                        //jTextArea1.setText(arregloTiempo[l][0] + "");
                         }
                         
                     }
@@ -269,7 +275,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    System.out.println("Holo"); //To change body of generated methods, choose Tools | Templates.
+                    System.out.println("Juegos Recomendados"); //To change body of generated methods, choose Tools | Templates.
                     //String nombre = ds.getValue().toString();
                     //Object o =   ds.getValue();
                     p =   dataSnapshot.getValue(appid.class);
@@ -299,7 +305,10 @@ public class NewJFrame extends javax.swing.JFrame {
 			for (int i = 0; i < 5; i++) {
 				System.out.println("top "+(i+1)+" juego: "+p.getjuegos().get(ids[topsimilar[i][1]].toString())+" coincidencia "+topsimilar[i][0]+" coincidencia2- "+topsimilar[i][2]);
 				
-			}
+                                recomendados += ("top "+(i+1)+" juego: "+p.getjuegos().get(ids[topsimilar[i][1]].toString())+" coincidencia "+topsimilar[i][0]+" coincidencia2- "+topsimilar[i][2] +"\n" );
+                                //System.out.println(recomendados);
+                        }
+                        jTextArea1.setText("Juegos recomendados \n" + recomendados);
 
                     //for (int i =0; i<=n; i++){
                         //arrayIds [i]=
